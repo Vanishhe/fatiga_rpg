@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fatiga</string>
+
+    <!-- Login screen -->
+    <string name="login_online_label">FATIGA / ONLINE</string>
+    <string name="login_screen_index">01</string>
+    <string name="login_title">FATIGA</string>
+    <string name="login_subtitle">A SOUL LOST. AN OATH UNBROKEN.</string>
+    <string name="auth_tab_login">LOGIN</string>
+    <string name="auth_tab_register">REGISTER</string>
+    <string name="label_email">EMAIL</string>
+    <string name="label_password">PASSWORD</string>
+    <string name="label_player_name">PLAYER NAME</string>
+    <string name="hint_new_souls">FOR NEW SOULS</string>
+    <string name="hint_email">wanderer@fatiga.io</string>
+    <string name="hint_password">********</string>
+    <string name="hint_player_name">The Nameless</string>
+    <string name="action_enter">ENTER</string>
+    <string name="action_exit">EXIT</string>
+    <string name="login_footer">ONE MORE LIFE. ONE MORE DESCENT.</string>
+    <string name="symbol_chevron_right">&gt;</string>
+    <string name="auth_loading">ENTERING THE HOLLOW...</string>
+
+    <!-- Validation and auth errors -->
+    <string name="error_email_invalid">ENTER A VALID EMAIL ADDRESS.</string>
+    <string name="error_password_short">PASSWORD MUST BE AT LEAST 6 CHARACTERS.</string>
+    <string name="error_player_name_invalid">NAME MUST BE 3-20 CHARACTERS: LETTERS, DIGITS, SPACE OR _.</string>
+    <string name="error_email_taken">THIS EMAIL IS ALREADY BOUND TO A SOUL.</string>
+    <string name="error_invalid_credentials">NO SOUL ANSWERS TO THESE CREDENTIALS.</string>
+    <string name="error_unknown">SOMETHING WENT WRONG. TRY AGAIN.</string>
+
+    <!-- Main screen placeholder -->
+    <string name="main_title">FATIGA</string>
+    <string name="main_subtitle">THE DESCENT BEGINS AGAIN</string>
+    <string name="main_placeholder_body">MAIN SCREEN UNDER CONSTRUCTION</string>
+    <string name="main_logged_in_as">SOUL BOUND:</string>
+
+    <!-- Main screen -->
+    <string name="main_profile_label">PROFILE / 001</string>
+    <string name="main_exit">EXIT</string>
+    <string name="main_unknown_soul">THE NAMELESS</string>
+    <string name="main_soul_line">SOUL LV. %1$02d  /  %2$02d RUNS</string>
+    <string name="main_choose_class">CHOOSE YOUR CLASS</string>
+    <string name="main_class_counter">01/02</string>
+    <string name="main_warrior">WARRIOR</string>
+    <string name="main_archer">ARCHER</string>
+    <string name="main_warrior_stats">STR 08 / DEF 06</string>
+    <string name="main_archer_stats">DEX 08 / DEF 03</string>
+    <string name="main_marker_selected">[X]</string>
+    <string name="main_marker_unselected">[ ]</string>
+    <string name="main_play">PLAY</string>
+    <string name="main_past_runs">PAST RUNS</string>
+    <string name="main_runs_total">%1$d TOTAL</string>
+    <string name="main_no_runs">NO RUNS YET. THE HOLLOW IS SILENT.</string>
+    <string name="main_footer">EVERY DEATH LEAVES AN ECHO.</string>
+    <string name="run_index">#%1$03d</string>
+    <string name="run_floor">F%1$02d</string>
+    <string name="run_result_clear">CLEAR</string>
+    <string name="run_result_fell">FELL</string>
+    <string name="run_result_fled">FLED</string>
+
+    <!-- City screen (temporary stub) -->
+    <string name="city_online_label">FATIGA / CITY</string>
+    <string name="city_screen_index">03</string>
+    <string name="city_title">THE LAST SANCTUARY</string>
+    <string name="city_subtitle">A brief shelter from the hollow.</string>
+    <string name="city_placeholder_body">CITY SCREEN UNDER CONSTRUCTION</string>
+    <string name="city_back">RETURN TO PROFILE</string>
+</resources>

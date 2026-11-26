@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fatiga 8 palette. Mirrors ui/theme/Color.kt -->
+    <color name="bg_black">#FF0D0D0D</color>
+    <color name="night_indigo">#FF12161F</color>
+    <color name="panel_dark_gray">#FF4A4A4A</color>
+    <color name="text_light_gray">#FF9E9E9E</color>
+    <color name="accent_off_white">#FFEAEAEA</color>
+
+    <color name="accent_muted_red">#FF7A3B3B</color>
+    <color name="accent_muted_blue">#FF3B4D66</color>
+    <color name="accent_muted_green">#FF3F5E45</color>
+    <color name="accent_leather">#FF594336</color>
+</resources>
