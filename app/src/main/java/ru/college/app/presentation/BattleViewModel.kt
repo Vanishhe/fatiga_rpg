@@ -57,6 +57,10 @@ data class BattleUiState(
     val enemyAttackSeq: Int = 0,
     val heroHitSeq: Int = 0,
     val enemyHitSeq: Int = 0,
+    // Separate counters let the UI play a death fade and a spawn slide
+    // without the ViewModel knowing anything about animation.
+    val enemyDeathSeq: Int = 0,
+    val enemySpawnSeq: Int = 0,
     val fleeing: Boolean = false,
     val paused: Boolean = false,
     val isLoading: Boolean = true,
@@ -322,6 +326,7 @@ class BattleViewModel(
                 pendingGold = gold,
                 pendingOfferings = offerings,
                 phase = BattlePhase.RESOLVING,
+                enemyDeathSeq = it.enemyDeathSeq + 1,
                 logRes = R.string.battle_log_enemy_dead,
                 logAmount = 0
             )
@@ -359,6 +364,7 @@ class BattleViewModel(
                 phase = BattlePhase.PLAYER_TURN,
                 enemyHp = hp,
                 enemyMaxHp = hp,
+                enemySpawnSeq = it.enemySpawnSeq + 1,
                 logRes = R.string.battle_log_start,
                 logAmount = 0
             )

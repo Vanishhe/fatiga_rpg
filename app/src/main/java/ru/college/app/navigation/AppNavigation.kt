@@ -173,6 +173,7 @@ fun AppNavigation() {
                 onSave = settingsViewModel::onSave,
                 onToggleSound = settingsViewModel::onToggleSound,
                 onToggleVibration = settingsViewModel::onToggleVibration,
+                onLanguageSelected = settingsViewModel::onLanguageSelected,
                 onLogout = settingsViewModel::onLogout,
                 onDeleteRequested = settingsViewModel::onDeleteRequested,
                 onDeleteDismissed = settingsViewModel::onDeleteDismissed,

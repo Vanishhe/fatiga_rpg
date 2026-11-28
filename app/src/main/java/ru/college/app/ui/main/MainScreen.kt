@@ -388,7 +388,7 @@ private fun RunRow(displayIndex: Int, run: RunHistoryUi) {
             )
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = run.locationName,
+                    text = stringResource(run.locationRes),
                     style = MaterialTheme.typography.titleMedium,
                     color = AccentOffWhite,
                     maxLines = 1,
@@ -435,8 +435,8 @@ private fun MainScreenPreview() {
                 soulLevel = 4,
                 totalRuns = 2,
                 runs = listOf(
-                    RunHistoryUi(2, "The Sunken Keep", RunResultUi.FELL, 6),
-                    RunHistoryUi(1, "The Hollow Road", RunResultUi.CLEAR, 8)
+                    RunHistoryUi(2, R.string.location_sunken_keep, RunResultUi.FELL, 6),
+                    RunHistoryUi(1, R.string.location_hollow_road, RunResultUi.CLEAR, 8)
                 ),
                 isLoading = false
             ),

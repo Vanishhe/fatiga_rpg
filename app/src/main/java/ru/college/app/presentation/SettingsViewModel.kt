@@ -22,6 +22,7 @@ data class SettingsUiState(
     val createdAt: Long = 0L,
     val soundEnabled: Boolean = true,
     val vibrationEnabled: Boolean = true,
+    val language: String = SessionManager.LANGUAGE_EN,
     val isLoading: Boolean = true,
     val isSaving: Boolean = false,
     val showDeleteConfirm: Boolean = false,
@@ -30,6 +31,8 @@ data class SettingsUiState(
     val loggedOut: Boolean = false
 ) {
     val hasChanges: Boolean get() = name.trim() != savedName
+    val languageIndex: Int
+        get() = if (language == SessionManager.LANGUAGE_RU) 1 else 0
 }
 
 class SettingsViewModel(
@@ -41,7 +44,8 @@ class SettingsViewModel(
     private val _uiState = MutableStateFlow(
         SettingsUiState(
             soundEnabled = sessionManager.soundEnabled,
-            vibrationEnabled = sessionManager.vibrationEnabled
+            vibrationEnabled = sessionManager.vibrationEnabled,
+            language = sessionManager.languageCode
         )
     )
     val uiState: StateFlow<SettingsUiState> = _uiState.asStateFlow()
@@ -77,6 +81,15 @@ class SettingsViewModel(
     fun onToggleVibration(enabled: Boolean) {
         sessionManager.vibrationEnabled = enabled
         _uiState.update { it.copy(vibrationEnabled = enabled) }
+    }
+
+    fun onLanguageSelected(index: Int) {
+        val code = if (index == 1) SessionManager.LANGUAGE_RU else SessionManager.LANGUAGE_EN
+        if (code == _uiState.value.language) return
+        // The flow inside SessionManager updates MainActivity's localized
+        // context, so every screen switches language immediately.
+        sessionManager.languageCode = code
+        _uiState.update { it.copy(language = code) }
     }
 
     fun onSave() {

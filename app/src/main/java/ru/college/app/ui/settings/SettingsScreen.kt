@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import ru.college.app.R
 import ru.college.app.presentation.SettingsUiState
 import ru.college.app.ui.components.PixelButton
+import ru.college.app.ui.components.PixelSegmentedSwitch
 import ru.college.app.ui.components.PixelTextField
 import ru.college.app.ui.theme.AccentMutedGreen
 import ru.college.app.ui.theme.AccentMutedRed
@@ -50,6 +51,7 @@ fun SettingsScreen(
     onSave: () -> Unit,
     onToggleSound: (Boolean) -> Unit,
     onToggleVibration: (Boolean) -> Unit,
+    onLanguageSelected: (Int) -> Unit,
     onLogout: () -> Unit,
     onDeleteRequested: () -> Unit,
     onDeleteDismissed: () -> Unit,
@@ -172,6 +174,22 @@ fun SettingsScreen(
                 labelRes = R.string.settings_vibration,
                 enabled = uiState.vibrationEnabled,
                 onToggle = onToggleVibration
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+            Text(
+                text = stringResource(R.string.settings_language),
+                style = MaterialTheme.typography.labelLarge,
+                color = AccentOffWhite
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            PixelSegmentedSwitch(
+                options = listOf(
+                    stringResource(R.string.language_en),
+                    stringResource(R.string.language_ru)
+                ),
+                selectedIndex = uiState.languageIndex,
+                onSelect = onLanguageSelected
             )
 
             Spacer(modifier = Modifier.height(32.dp))

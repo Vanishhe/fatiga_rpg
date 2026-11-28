@@ -10,7 +10,9 @@ enum class HeroClass(
     val baseDefense: Int
 ) {
     WARRIOR(id = "WARRIOR", baseHp = 48, baseAttack = 8, baseDefense = 6),
-    ARCHER(id = "ARCHER", baseHp = 36, baseAttack = 8, baseDefense = 3);
+    // Archer trades raw durability for a stronger opening shot, so the class
+    // is competitive from the first floor instead of lagging behind Warrior.
+    ARCHER(id = "ARCHER", baseHp = 36, baseAttack = 10, baseDefense = 3);
 
     companion object {
         fun fromId(id: String?): HeroClass =

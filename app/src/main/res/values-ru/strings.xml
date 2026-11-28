@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fatiga</string>
+
+    <!-- Splash screen -->
+    <string name="splash_subtitle">ДУША ПОТЕРЯНА. КЛЯТВА НЕРУШИМА.</string>
+
+    <!-- Login screen -->
+    <string name="login_online_label">FATIGA / СЕТЬ</string>
+    <string name="login_screen_index">01</string>
+    <string name="login_title">FATIGA</string>
+    <string name="login_subtitle">ДУША ПОТЕРЯНА. КЛЯТВА НЕРУШИМА.</string>
+    <string name="auth_tab_login">ВХОД</string>
+    <string name="auth_tab_register">РЕГИСТРАЦИЯ</string>
+    <string name="label_email">ПОЧТА</string>
+    <string name="label_password">ПАРОЛЬ</string>
+    <string name="label_player_name">ИМЯ ИГРОКА</string>
+    <string name="hint_new_souls">ДЛЯ НОВЫХ ДУШ</string>
+    <string name="hint_email">wanderer@fatiga.io</string>
+    <string name="hint_password">********</string>
+    <string name="hint_player_name">Безымянный</string>
+    <string name="action_enter">ВОЙТИ</string>
+    <string name="action_exit">ВЫЙТИ</string>
+    <string name="login_footer">ЕЩЁ ОДНА ЖИЗНЬ. ЕЩЁ ОДИН СПУСК.</string>
+    <string name="symbol_chevron_right">&gt;</string>
+    <string name="auth_loading">ВХОД В ПУСТОТУ...</string>
+
+    <!-- Validation and auth errors -->
+    <string name="error_email_invalid">ВВЕДИТЕ КОРРЕКТНЫЙ АДРЕС ПОЧТЫ.</string>
+    <string name="error_password_short">ПАРОЛЬ ДОЛЖЕН БЫТЬ НЕ КОРОЧЕ 6 СИМВОЛОВ.</string>
+    <string name="error_player_name_invalid">ИМЯ: 3-20 СИМВОЛОВ: БУКВЫ, ЦИФРЫ, ПРОБЕЛ ИЛИ _.</string>
+    <string name="error_email_taken">ЭТА ПОЧТА УЖЕ ПРИВЯЗАНА К ДУШЕ.</string>
+    <string name="error_invalid_credentials">НИ ОДНА ДУША НЕ ОТВЕЧАЕТ НА ЭТИ ДАННЫЕ.</string>
+    <string name="error_unknown">ЧТО-ТО ПОШЛО НЕ ТАК. ПОПРОБУЙТЕ СНОВА.</string>
+
+    <!-- Main screen -->
+    <string name="main_title">FATIGA</string>
+    <string name="main_subtitle">СПУСК НАЧИНАЕТСЯ ВНОВЬ</string>
+    <string name="main_logged_in_as">ДУША ПРИВЯЗАНА:</string>
+    <string name="main_profile_label">ПРОФИЛЬ / 001</string>
+    <string name="main_settings">НАСТРОЙКИ</string>
+    <string name="main_unknown_soul">БЕЗЫМЯННЫЙ</string>
+    <string name="main_soul_line">ДУША УР. %1$02d  /  %2$02d ЗАБЕГОВ</string>
+    <string name="main_choose_class">ВЫБЕРИТЕ КЛАСС</string>
+    <string name="main_class_counter">01/02</string>
+    <string name="main_warrior">ВОИН</string>
+    <string name="main_archer">ЛУЧНИК</string>
+    <string name="main_warrior_stats">СИЛ 08 / ЗАЩ 06</string>
+    <string name="main_archer_stats">ЛОВ 10 / ЗАЩ 03</string>
+    <string name="main_marker_selected">[X]</string>
+    <string name="main_marker_unselected">[ ]</string>
+    <string name="main_play">ИГРАТЬ</string>
+    <string name="main_past_runs">ПРОШЛЫЕ ЗАБЕГИ</string>
+    <string name="main_runs_total">ВСЕГО %1$d</string>
+    <string name="main_no_runs">ЗАБЕГОВ ПОКА НЕТ. ПУСТОТА МОЛЧИТ.</string>
+    <string name="main_footer">КАЖДАЯ СМЕРТЬ ОСТАВЛЯЕТ ЭХО.</string>
+    <string name="run_index">#%1$03d</string>
+    <string name="run_floor">Э%1$02d</string>
+    <string name="run_result_clear">ЗАЧИСТКА</string>
+    <string name="run_result_fell">ПАЛ</string>
+    <string name="run_result_fled">БЕГСТВО</string>
+    <string name="location_sunken_keep">ЗАТОНУВШАЯ КРЕПОСТЬ</string>
+    <string name="location_hollow_road">ПОЛАЯ ДОРОГА</string>
+    <string name="location_unknown">НЕИЗВЕСТНОЕ МЕСТО</string>
+
+    <!-- Settings screen -->
+    <string name="settings_online_label">FATIGA / НАСТРОЙКИ</string>
+    <string name="settings_close">ЗАКРЫТЬ</string>
+    <string name="settings_title">НАСТРОЙКИ</string>
+    <string name="settings_subtitle">КЛЯТВА ВЯЖЕТ. ДУША ПОМНИТ.</string>
+    <string name="settings_section_profile">ПРОФИЛЬ</string>
+    <string name="settings_section_preferences">ПАРАМЕТРЫ</string>
+    <string name="settings_section_account">АККАУНТ</string>
+    <string name="settings_soul_level">УРОВЕНЬ ДУШИ</string>
+    <string name="settings_soul_value">УР. %1$d</string>
+    <string name="settings_bound">ПРИВЯЗАНА</string>
+    <string name="settings_no_date">--</string>
+    <string name="settings_save">СОХРАНИТЬ</string>
+    <string name="settings_saved">КЛЯТВА ПЕРЕПИСАНА.</string>
+    <string name="settings_error_name">ИМЯ ДОЛЖНО БЫТЬ 3-20 СИМВОЛОВ.</string>
+    <string name="settings_sound">ЗВУК</string>
+    <string name="settings_vibration">ВИБРАЦИЯ</string>
+    <string name="settings_language">ЯЗЫК: EN / RU</string>
+    <string name="language_en">EN</string>
+    <string name="language_ru">RU</string>
+    <string name="settings_on">ВКЛ</string>
+    <string name="settings_off">ВЫКЛ</string>
+    <string name="settings_delete">УДАЛИТЬ ПРОФИЛЬ</string>
+    <string name="settings_delete_title">СТЕРЕТЬ ЭТУ ДУШУ?</string>
+    <string name="settings_delete_body">ВСЕ ЗАБЕГИ, КЛЯТВЫ И ПОДНОШЕНИЯ БУДУТ ПОТЕРЯНЫ. ЭТО НЕЛЬЗЯ ОТМЕНИТЬ.</string>
+    <string name="settings_delete_confirm">СТЕРЕТЬ НАВСЕГДА</string>
+    <string name="settings_cancel">ОТМЕНА</string>
+    <string name="settings_logout">ВЫЙТИ</string>
+    <string name="settings_footer">НЕКОТОРЫЕ ДВЕРИ ОТКРЫВАЮТСЯ ТОЛЬКО ИЗНУТРИ.</string>
+
+    <!-- City hub -->
+    <string name="city_online_label">FATIGA / ГОРОД</string>
+    <string name="city_screen_index">03</string>
+    <string name="city_title">ПОСЛЕДНЕЕ УБЕЖИЩЕ</string>
+    <string name="city_subtitle">Короткий приют в пустоте.</string>
+    <string name="city_safe_ground">БЕЗОПАСНАЯ ЗЕМЛЯ</string>
+    <string name="city_profile">ПРОФИЛЬ</string>
+    <string name="city_gold">ЗОЛОТО</string>
+    <string name="city_gold_short">ЗОЛОТО %1$s</string>
+    <string name="city_offerings">ПОДНОШЕНИЯ</string>
+    <string name="city_hero_line">%1$s  /  ОЗ %2$d/%3$d  /  АТК %4$d  /  ЗАЩ %5$d</string>
+    <string name="city_index_shrine">01</string>
+    <string name="city_index_armory">02</string>
+    <string name="city_index_portal">03</string>
+
+    <string name="city_shrine_title">СВЯТИЛИЩЕ</string>
+    <string name="city_shrine_desc">ПРЕКЛОНИСЬ И ПРИНЕСИ ТО, ЧТО ВЗЯЛ. СТАРЫЕ КЛЯТВЫ ВСЁ ЕЩЁ ОТВЕЧАЮТ.</string>
+    <string name="city_shrine_action">МОЛИТЬСЯ</string>
+
+    <string name="city_armory_title">ОРУЖЕЙНАЯ</string>
+    <string name="city_armory_desc">СТАЛЬ, КОЖА И МИЛОСТЬ В СКЛЯНКЕ. У ВСЕГО ЕСТЬ ЦЕНА.</string>
+    <string name="city_armory_action">ТОРГОВАТЬ</string>
+    <string name="city_armory_panel_title">ТОВАРЫ</string>
+    <string name="city_armory_weapon">ОРУЖИЕ</string>
+    <string name="city_armory_armor">БРОНЯ</string>
+    <string name="city_armory_potion_red">КРАСНОЕ ЗЕЛЬЕ</string>
+    <string name="city_armory_potion_blue">СИНЕЕ ЗЕЛЬЕ</string>
+    <string name="city_level">УРОВЕНЬ %1$d</string>
+    <string name="city_owned">В ИНВЕНТАРЕ %1$d</string>
+    <string name="city_cost">%1$d З</string>
+    <string name="city_buy">КУПИТЬ</string>
+
+    <string name="city_portal_title">ПОРТАЛ</string>
+    <string name="city_portal_desc">ЗАТОНУВШАЯ КРЕПОСТЬ ГОЛОДНА. ТРИ ЭТАЖА. ОДИН ПУТЬ НАЗАД.</string>
+    <string name="city_portal_action">СПУСТИТЬСЯ</string>
+
+    <string name="city_msg_no_hero">НИ ОДИН ГЕРОЙ НЕ ОТВЕЧАЕТ. СНАЧАЛА ВЫБЕРИТЕ КЛАСС.</string>
+    <string name="city_msg_not_enough_gold">НЕДОСТАТОЧНО ЗОЛОТА.</string>
+    <string name="city_msg_weapon">КЛИНОК ЗАТОЧЕН.</string>
+    <string name="city_msg_armor">ПЛАСТИНЫ УКРЕПЛЕНЫ.</string>
+    <string name="city_msg_potion">СКЛЯНКА ТЕПЕРЬ ТВОЯ.</string>
+    <string name="city_msg_inventory_full">СУМКА ПОЛНА.</string>
+
+    <!-- Skill tree (Shrine) -->
+    <string name="skilltree_label">СВЯТИЛИЩЕ / КЛЯТВЫ</string>
+    <string name="skilltree_title">ДРЕВО КЛЯТВ</string>
+    <string name="skilltree_subtitle">ТОЛЬКО ТВОЙ ПУТЬ ОТВЕЧАЕТ НА МОЛИТВУ.</string>
+    <string name="skilltree_offerings">ПОДНОШЕНИЯ %1$d</string>
+    <string name="skilltree_inactive">ДРУГОЙ ПУТЬ</string>
+    <string name="skilltree_unlocked">ОТКРЫТО</string>
+    <string name="skilltree_locked">ТРЕБУЕТСЯ ПРЕДЫДУЩАЯ КЛЯТВА</string>
+    <string name="skilltree_cost">ЦЕНА %1$d</string>
+    <string name="skilltree_unlock">ОТКРЫТЬ</string>
+    <string name="skilltree_footer">КАЖДАЯ КЛЯТВА ПЛАТИТСЯ КРОВЬЮ И ПОДНОШЕНИЯМИ.</string>
+    <string name="skilltree_back">ВЕРНУТЬСЯ В УБЕЖИЩЕ</string>
+    <string name="skilltree_msg_wrong_class">ЭТОТ ПУТЬ НЕ ОТВЕЧАЕТ ТЕБЕ.</string>
+    <string name="skilltree_msg_locked">ПРЕДЫДУЩАЯ КЛЯТВА ЕЩЁ НЕ ПРИНЕСЕНА.</string>
+    <string name="skilltree_msg_need_offerings">НЕДОСТАТОЧНО ПОДНОШЕНИЙ.</string>
+    <string name="skilltree_msg_unlocked">КЛЯТВА ПРИНЕСЕНА.</string>
+
+    <string name="skill_iron_guard_name">ЖЕЛЕЗНЫЙ СТРАЖ</string>
+    <string name="skill_iron_guard_desc">ЗАЩ +1. ЩИТ ПОМНИТ КАЖДЫЙ УДАР.</string>
+    <string name="skill_crushing_blow_name">ДРОБЯЩИЙ УДАР</string>
+    <string name="skill_crushing_blow_desc">АТК +2. КОСТЬ ЛОМАЕТСЯ РАНЬШЕ СТАЛИ.</string>
+    <string name="skill_blood_oath_name">КРОВАВАЯ КЛЯТВА</string>
+    <string name="skill_blood_oath_desc">МАКС. ОЗ +8. БОЛЬ СТАНОВИТСЯ ТОПЛИВОМ.</string>
+    <string name="skill_steady_aim_name">ВЕРНЫЙ ПРИЦЕЛ</string>
+    <string name="skill_steady_aim_desc">АТК +1. ВДОХ, ЗАТЕМ ВЫСТРЕЛ.</string>
+    <string name="skill_twin_shot_name">ДВОЙНОЙ ВЫСТРЕЛ</string>
+    <string name="skill_twin_shot_desc">АТК +2. ДВЕ СТРЕЛЫ, ОДНА МОЛИТВА.</string>
+    <string name="skill_shadow_step_name">ТЕНЕВОЙ ШАГ</string>
+    <string name="skill_shadow_step_desc">ЗАЩ +1, МАКС. ОЗ +4. ТЬМА УСТУПАЕТ МЕСТО.</string>
+    <string name="skill_unknown_name">НЕИЗВЕСТНАЯ КЛЯТВА</string>
+    <string name="skill_unknown_desc">НАДПИСЬ СТЁРЛАСЬ.</string>
+
+    <!-- Battle screen -->
+    <string name="battle_dungeon">ЗАТОНУВШАЯ КРЕПОСТЬ</string>
+    <string name="battle_floor_turn">ЭТАЖ %1$d  /  ХОД %2$d</string>
+    <string name="battle_turn">ХОД %1$d</string>
+    <string name="battle_pause">II</string>
+    <string name="battle_pause_title">МИР ЗАДЕРЖАЛ ДЫХАНИЕ</string>
+    <string name="battle_pause_body">ГОБЛИН ЖДЁТ. ТВОЯ КЛЯТВА — НЕТ.</string>
+    <string name="battle_resume">ПРОДОЛЖИТЬ</string>
+    <string name="battle_abandon">ПОКИНУТЬ ЗАБЕГ</string>
+    <string name="battle_enemy_goblin">ГОБЛИН</string>
+    <string name="battle_enemy_goblin_desc">ЖАЛКОЕ СУЩЕСТВО С РЖАВЫМ ТЕСАКОМ.</string>
+    <string name="battle_attack">АТАКА</string>
+    <string name="battle_special">ПРИЁМ</string>
+    <string name="battle_flee">БЕЖАТЬ</string>
+    <string name="battle_enemy_turn">ХОД ВРАГА</string>
+    <string name="battle_your_turn">ТВОЙ ХОД</string>
+    <string name="battle_inventory">ИНВЕНТАРЬ</string>
+    <string name="battle_inventory_count">%1$d СЛОТОВ</string>
+    <string name="battle_hint">НАЖМИТЕ НА ЗЕЛЬЕ, ЧТОБЫ ВЫПИТЬ. ВРАГ ВСЁ РАВНО УДАРИТ.</string>
+    <string name="battle_hp_value">%1$d / %2$d</string>
+    <string name="battle_empty_slot">ПУСТО</string>
+    <string name="battle_item_count">x%1$d</string>
+    <string name="battle_item_red">КРАСНОЕ ЗЕЛЬЕ</string>
+    <string name="battle_item_blue">СИНЕЕ ЗЕЛЬЕ</string>
+    <string name="battle_item_unknown">НЕИЗВЕСТНАЯ СКЛЯНКА</string>
+
+    <string name="battle_log_start">ГОБЛИН ПЕРЕГОРАЖИВАЕТ ПУТЬ.</string>
+    <string name="battle_log_hero_attack">ТВОЙ КЛИНОК НАНОСИТ %1$d УРОНА.</string>
+    <string name="battle_log_hero_special_warrior">ДРОБЯЩИЙ УДАР НАНОСИТ %1$d.</string>
+    <string name="battle_log_hero_special_miss">УДАР УХОДИТ В ПУСТОТУ.</string>
+    <string name="battle_log_hero_archer">СТРЕЛЫ ВПИВАЮТСЯ В ПЛОТЬ: %1$d.</string>
+    <string name="battle_log_archer_miss">ОБЕ СТРЕЛЫ ПРОЛЕТАЮТ МИМО.</string>
+    <string name="battle_log_full_hp">ТЫ УЖЕ ЦЕЛ.</string>
+    <string name="battle_log_heal">ЗЕЛЬЕ ВОССТАНАВЛИВАЕТ %1$d ОЗ.</string>
+    <string name="battle_log_flee_success">ТЫ СКРЫВАЕШЬСЯ В ТЕМНОТЕ.</string>
+    <string name="battle_log_flee_fail">ГОБЛИН ОТРЕЗАЕТ ПУТЬ К ОТСТУПЛЕНИЮ.</string>
+    <string name="battle_log_abandon">ТЫ ПОКИДАЕШЬ СПУСК.</string>
+    <string name="battle_log_enemy_attack">ГОБЛИН БЬЁТ НА %1$d.</string>
+    <string name="battle_log_enemy_dead">ГОБЛИН ПАДАЕТ.</string>
+    <string name="battle_log_floor_clear">СТУПЕНИ ВЕДУТ ГЛУБЖЕ.</string>
+    <string name="battle_log_victory">КРЕПОСТЬ МОЛЧИТ. ТЫ ЖИВ.</string>
+    <string name="battle_log_fell">ТВОЯ ДУША РАСТВОРЯЕТСЯ В ПУСТОТЕ.</string>
+    <string name="battle_error_no_hero">НИ ОДИН ГЕРОЙ НЕ ХОДИТ ЭТИМИ ЗАЛАМИ.</string>
+
+    <string name="battle_outcome_clear">КРЕПОСТЬ СДАЁТСЯ</string>
+    <string name="battle_outcome_clear_body">ТРИ ЭТАЖА ПРОЙДЕНЫ. ГОБЛИНЫ ЗАПОМНЯТ ТВОЁ ИМЯ.</string>
+    <string name="battle_outcome_fled">ТЫ СБЕЖАЛ</string>
+    <string name="battle_outcome_fled_body">ТЫ ЖИВ, НО ПОЛОВИНА ДОБЫЧИ ОСТАЛАСЬ В ТЕМНОТЕ.</string>
+    <string name="battle_outcome_fell">ТЫ ПАЛ</string>
+    <string name="battle_outcome_fell_body">ПУСТОТА ЗАБИРАЕТ ТЕЛО. ПРОФИЛЬ ОСТАЁТСЯ ПУСТЫМ.</string>
+    <string name="battle_outcome_floor">ЭТАЖ %1$d ИЗ %2$d</string>
+    <string name="battle_outcome_gold">ЗОЛОТО +%1$d</string>
+    <string name="battle_outcome_offerings">ПОДНОШЕНИЯ +%1$d</string>
+    <string name="battle_return_sanctuary">ВЕРНУТЬСЯ В УБЕЖИЩЕ</string>
+    <string name="battle_return_profile">ВЕРНУТЬСЯ В ПРОФИЛЬ</string>
+</resources>

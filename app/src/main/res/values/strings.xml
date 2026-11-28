@@ -46,7 +46,7 @@
     <string name="main_warrior">WARRIOR</string>
     <string name="main_archer">ARCHER</string>
     <string name="main_warrior_stats">STR 08 / DEF 06</string>
-    <string name="main_archer_stats">DEX 08 / DEF 03</string>
+    <string name="main_archer_stats">DEX 10 / DEF 03</string>
     <string name="main_marker_selected">[X]</string>
     <string name="main_marker_unselected">[ ]</string>
     <string name="main_play">PLAY</string>
@@ -59,6 +59,9 @@
     <string name="run_result_clear">CLEAR</string>
     <string name="run_result_fell">FELL</string>
     <string name="run_result_fled">FLED</string>
+    <string name="location_sunken_keep">THE SUNKEN KEEP</string>
+    <string name="location_hollow_road">THE HOLLOW ROAD</string>
+    <string name="location_unknown">UNKNOWN PLACE</string>
 
     <!-- Settings screen -->
     <string name="settings_online_label">FATIGA / SETTINGS</string>
@@ -77,6 +80,9 @@
     <string name="settings_error_name">NAME MUST BE 3-20 CHARACTERS.</string>
     <string name="settings_sound">SOUND</string>
     <string name="settings_vibration">VIBRATION</string>
+    <string name="settings_language">LANGUAGE: EN / RU</string>
+    <string name="language_en">EN</string>
+    <string name="language_ru">RU</string>
     <string name="settings_on">ON</string>
     <string name="settings_off">OFF</string>
     <string name="settings_delete">DELETE PROFILE</string>

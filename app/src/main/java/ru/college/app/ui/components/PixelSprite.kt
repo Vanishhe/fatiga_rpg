@@ -14,7 +14,8 @@ import androidx.compose.ui.res.imageResource
 
 /**
  * Pixel-art sprite. FilterQuality.None is mandatory so Android never blurs it.
- * [tint] is used by the battle screen for the short damage flash.
+ * [tint] is used by the battle screen for the short damage flash, while
+ * [alpha] drives the enemy death fade without removing the composable.
  */
 @Composable
 fun PixelSprite(
@@ -22,13 +23,15 @@ fun PixelSprite(
     contentDescription: String?,
     modifier: Modifier = Modifier,
     flipHorizontal: Boolean = false,
-    tint: Color? = null
+    tint: Color? = null,
+    alpha: Float = 1f
 ) {
     Image(
         bitmap = ImageBitmap.imageResource(drawableRes),
         contentDescription = contentDescription,
         modifier = modifier.graphicsLayer(
-            scaleX = if (flipHorizontal) -1f else 1f
+            scaleX = if (flipHorizontal) -1f else 1f,
+            alpha = alpha
         ),
         contentScale = ContentScale.Fit,
         filterQuality = FilterQuality.None,

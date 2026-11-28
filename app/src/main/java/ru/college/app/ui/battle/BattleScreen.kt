@@ -96,6 +96,13 @@ fun BattleScreen(
     val heroFlash = remember { Animatable(0f) }
     val enemyFlash = remember { Animatable(0f) }
     val fleeOffset = remember { Animatable(0f) }
+    // Death = white flash + fade to zero. Spawn = slide in from off-screen
+    // right. Both are driven by sequence counters from BattleUiState.
+    val enemyDeathFlash = remember { Animatable(0f) }
+    // Start visible at rest so a restored battle never renders an invisible
+    // enemy; the spawn effect overrides these values when it fires.
+    val enemyAlpha = remember { Animatable(1f) }
+    val enemySpawnOffset = remember { Animatable(0f) }
 
     LaunchedEffect(uiState.heroAttackSeq) {
         if (uiState.heroAttackSeq > 0) {
@@ -133,6 +140,23 @@ fun BattleScreen(
             enemyShake.animateTo(0f, tween(40))
         }
     }
+    LaunchedEffect(uiState.enemyDeathSeq) {
+        if (uiState.enemyDeathSeq > 0) {
+            // Bright white silhouette, then dissolve before the next spawn.
+            enemyDeathFlash.snapTo(1f)
+            enemyDeathFlash.animateTo(0f, tween(300))
+            enemyAlpha.animateTo(0f, tween(450))
+        }
+    }
+    LaunchedEffect(uiState.enemySpawnSeq) {
+        if (uiState.enemySpawnSeq > 0) {
+            // Reset the corpse state, then slide the new enemy in from the right.
+            enemyDeathFlash.snapTo(0f)
+            enemyAlpha.snapTo(1f)
+            enemySpawnOffset.snapTo(SPAWN_OFFSET_DP)
+            enemySpawnOffset.animateTo(0f, tween(420))
+        }
+    }
     LaunchedEffect(uiState.fleeing) {
         if (uiState.fleeing) {
             fleeOffset.animateTo(-420f, tween(700))
@@ -140,7 +164,12 @@ fun BattleScreen(
     }
 
     val heroTint = if (heroFlash.value > 0.45f) AccentOffWhite else null
-    val enemyTint = if (enemyFlash.value > 0.45f) AccentOffWhite else null
+    val enemyTint = when {
+        // Keep the corpse white through the whole dissolve, not just the flash.
+        enemyDeathFlash.value > 0.05f || enemyAlpha.value < 0.99f -> Color.White
+        enemyFlash.value > 0.45f -> AccentOffWhite
+        else -> null
+    }
     val actionsEnabled = uiState.phase == BattlePhase.PLAYER_TURN &&
         !uiState.paused &&
         uiState.outcome == null &&
@@ -257,10 +286,17 @@ fun BattleScreen(
                     modifier = Modifier
                         .align(Alignment.BottomEnd)
                         .padding(end = 24.dp, bottom = 16.dp)
-                        .offset(x = (enemyNudge.value + enemyShake.value).dp)
+                        .offset(
+                            x = (
+                                enemyNudge.value +
+                                    enemyShake.value +
+                                    enemySpawnOffset.value
+                                ).dp
+                        )
                         .size(112.dp),
                     flipHorizontal = true,
-                    tint = enemyTint
+                    tint = enemyTint,
+                    alpha = enemyAlpha.value
                 )
             }
 
@@ -615,65 +651,72 @@ private fun OutcomeOverlay(
             .fillMaxSize()
             .background(BgBlack.copy(alpha = 0.96f))
             .safeDrawingPadding()
-            .padding(24.dp),
-        contentAlignment = Alignment.Center
+            .padding(24.dp)
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .border(1.dp, accent, RoundedCornerShape(0.dp))
-                .padding(24.dp)
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(
-                text = stringResource(titleRes),
-                style = MaterialTheme.typography.headlineLarge,
-                color = accent
-            )
-            Spacer(modifier = Modifier.height(12.dp))
-            Text(
-                text = stringResource(bodyRes),
-                style = MaterialTheme.typography.bodySmall,
-                color = TextLightGray
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-            Text(
-                text = stringResource(
-                    R.string.battle_outcome_floor,
-                    uiState.outcomeFloor,
-                    uiState.totalFloors
-                ),
-                style = MaterialTheme.typography.labelSmall,
-                color = TextLightGray
-            )
-            Spacer(modifier = Modifier.height(6.dp))
-            Text(
-                text = stringResource(R.string.battle_outcome_gold, uiState.outcomeGold),
-                style = MaterialTheme.typography.labelSmall,
-                color = AccentOffWhite
-            )
-            if (uiState.outcomeOfferings > 0) {
-                Spacer(modifier = Modifier.height(6.dp))
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(1.dp, accent, RoundedCornerShape(0.dp))
+                    .padding(24.dp)
+            ) {
+                Text(
+                    text = stringResource(titleRes),
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = accent
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = stringResource(bodyRes),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = TextLightGray
+                )
+                Spacer(modifier = Modifier.height(20.dp))
                 Text(
                     text = stringResource(
-                        R.string.battle_outcome_offerings,
-                        uiState.outcomeOfferings
+                        R.string.battle_outcome_floor,
+                        uiState.outcomeFloor,
+                        uiState.totalFloors
                     ),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = TextLightGray
+                )
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text = stringResource(R.string.battle_outcome_gold, uiState.outcomeGold),
                     style = MaterialTheme.typography.labelSmall,
                     color = AccentOffWhite
                 )
+                if (uiState.outcomeOfferings > 0) {
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = stringResource(
+                            R.string.battle_outcome_offerings,
+                            uiState.outcomeOfferings
+                        ),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = AccentOffWhite
+                    )
+                }
+                if (uiState.errorRes != null) {
+                    Spacer(modifier = Modifier.height(12.dp))
+                    Text(
+                        text = stringResource(uiState.errorRes),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.error
+                    )
+                }
             }
-            if (uiState.errorRes != null) {
-                Spacer(modifier = Modifier.height(12.dp))
-                Text(
-                    text = stringResource(uiState.errorRes),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.error
-                )
-            }
-            Spacer(modifier = Modifier.height(24.dp))
+
+            // Bottom-anchored and styled exactly like the Login ENTER button:
+            // full width, high contrast, square border, chevron on the right.
             PixelButton(
                 text = stringResource(buttonRes),
-                onClick = onOutcomeConfirmed
+                onClick = onOutcomeConfirmed,
+                trailingSymbol = stringResource(R.string.symbol_chevron_right)
             )
         }
     }
@@ -686,3 +729,4 @@ private fun heroDrawable(heroClass: HeroClassUi): Int = when (heroClass) {
 }
 
 private const val MAX_SLOTS = 8
+private const val SPAWN_OFFSET_DP = 520f

@@ -28,7 +28,9 @@ enum class RunResultUi { CLEAR, FELL, FLED }
 
 data class RunHistoryUi(
     val id: Long,
-    val locationName: String,
+    // Localized at render time, so stored English names never leak into the
+    // Russian UI after a language switch.
+    @StringRes val locationRes: Int,
     val result: RunResultUi,
     val floorReached: Int
 )
@@ -155,7 +157,11 @@ class MainViewModel(
 
     private fun toUi(run: RunHistoryEntity) = RunHistoryUi(
         id = run.id,
-        locationName = run.locationName,
+        locationRes = when (run.locationName) {
+            "THE SUNKEN KEEP", "SUNKEN_KEEP" -> R.string.location_sunken_keep
+            "THE HOLLOW ROAD", "HOLLOW_ROAD" -> R.string.location_hollow_road
+            else -> R.string.location_unknown
+        },
         result = when (run.result) {
             "CLEAR" -> RunResultUi.CLEAR
             "FLED" -> RunResultUi.FLED
