@@ -144,8 +144,10 @@ class MainViewModel(
         maxHp = heroClass.baseHp,
         attackDamage = heroClass.baseAttack,
         defense = heroClass.baseDefense,
-        gold = 0,
-        offerings = 0,
+        // A small starting purse lets a fresh profile try the Armory and the
+        // Shrine immediately instead of staring at disabled buttons.
+        gold = 60,
+        offerings = 2,
         weaponLevel = 0,
         armorLevel = 0,
         inventoryJson = "[]"

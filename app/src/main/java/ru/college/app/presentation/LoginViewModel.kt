@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ru.college.app.R
 import ru.college.app.data.local.db.entities.UserEntity
+import ru.college.app.data.local.pref.SessionManager
 import ru.college.app.data.repository.UserRepository
 import java.security.MessageDigest
 import java.security.SecureRandom
@@ -33,7 +34,8 @@ data class LoginUiState(
 )
 
 class LoginViewModel(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val sessionManager: SessionManager
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(LoginUiState())
@@ -124,7 +126,7 @@ class LoginViewModel(
         }
         val salt = generateSalt()
         val hash = hashPassword(password, salt)
-        userRepository.insertUser(
+        val userId = userRepository.insertUser(
             UserEntity(
                 email = email,
                 name = name,
@@ -132,7 +134,9 @@ class LoginViewModel(
                 passwordSalt = salt,
                 createdAt = System.currentTimeMillis()
             )
-        ).let { userId -> _uiState.update { it.copy(userId = userId) } }
+        )
+        sessionManager.saveSession(userId)
+        _uiState.update { it.copy(userId = userId) }
         return true
     }
 
@@ -142,6 +146,7 @@ class LoginViewModel(
             _uiState.update { it.copy(formErrorRes = R.string.error_invalid_credentials) }
             return false
         }
+        sessionManager.saveSession(user.id)
         _uiState.update { it.copy(userId = user.id) }
         return true
     }
@@ -179,8 +184,16 @@ class LoginViewModel(
         private val EMAIL_REGEX = Regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")
         private val PLAYER_NAME_REGEX = Regex("^[A-Za-zА-Яа-яЁё0-9 _]+$")
 
-        fun factory(userRepository: UserRepository) = viewModelFactory {
-            initializer { LoginViewModel(userRepository) }
+        fun factory(
+            userRepository: UserRepository,
+            sessionManager: SessionManager
+        ) = viewModelFactory {
+            initializer {
+                LoginViewModel(
+                    userRepository = userRepository,
+                    sessionManager = sessionManager
+                )
+            }
         }
     }
 }

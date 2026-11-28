@@ -60,7 +60,7 @@ fun MainScreen(
     uiState: MainUiState,
     onClassSelected: (MainClassOption) -> Unit,
     onPlay: () -> Unit,
-    onLogout: () -> Unit,
+    onSettings: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -77,7 +77,7 @@ fun MainScreen(
                 .safeDrawingPadding(),
             contentPadding = PaddingValues(horizontal = 24.dp, vertical = 16.dp)
         ) {
-            item { MainTopBar(onLogout = onLogout) }
+            item { MainTopBar(onSettings = onSettings) }
 
             item {
                 Spacer(modifier = Modifier.height(32.dp))
@@ -184,7 +184,7 @@ fun MainScreen(
 }
 
 @Composable
-private fun MainTopBar(onLogout: () -> Unit) {
+private fun MainTopBar(onSettings: () -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -196,12 +196,12 @@ private fun MainTopBar(onLogout: () -> Unit) {
             color = TextLightGray
         )
         Text(
-            text = stringResource(R.string.main_exit),
+            text = stringResource(R.string.main_settings),
             style = MaterialTheme.typography.labelSmall,
             color = AccentOffWhite,
             modifier = Modifier
                 .border(1.dp, PanelDarkGray, RoundedCornerShape(0.dp))
-                .clickable(onClick = onLogout)
+                .clickable(onClick = onSettings)
                 .padding(horizontal = 12.dp, vertical = 6.dp)
         )
     }
@@ -442,7 +442,7 @@ private fun MainScreenPreview() {
             ),
             onClassSelected = {},
             onPlay = {},
-            onLogout = {}
+            onSettings = {}
         )
     }
 }

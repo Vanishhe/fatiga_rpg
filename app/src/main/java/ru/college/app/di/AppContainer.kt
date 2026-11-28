@@ -2,11 +2,14 @@ package ru.college.app.di
 
 import android.content.Context
 import ru.college.app.data.local.db.AppDatabase
+import ru.college.app.data.local.pref.SessionManager
 import ru.college.app.data.repository.PlayerProgressRepository
 import ru.college.app.data.repository.RunHistoryRepository
+import ru.college.app.data.repository.UnlockedSkillRepository
 import ru.college.app.data.repository.UserRepository
 import ru.college.app.data.repositoryimpl.PlayerProgressRepositoryImpl
 import ru.college.app.data.repositoryimpl.RunHistoryRepositoryImpl
+import ru.college.app.data.repositoryimpl.UnlockedSkillRepositoryImpl
 import ru.college.app.data.repositoryimpl.UserRepositoryImpl
 
 /**
@@ -16,6 +19,8 @@ import ru.college.app.data.repositoryimpl.UserRepositoryImpl
 class AppContainer(private val context: Context) {
 
     private val database: AppDatabase by lazy { AppDatabase.getInstance(context) }
+
+    val sessionManager: SessionManager by lazy { SessionManager(context) }
 
     val userRepository: UserRepository by lazy {
         UserRepositoryImpl(database.userDao())
@@ -27,5 +32,9 @@ class AppContainer(private val context: Context) {
 
     val playerProgressRepository: PlayerProgressRepository by lazy {
         PlayerProgressRepositoryImpl(database.playerProgressDao())
+    }
+
+    val unlockedSkillRepository: UnlockedSkillRepository by lazy {
+        UnlockedSkillRepositoryImpl(database.unlockedSkillDao())
     }
 }

@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">Fatiga</string>
 
+    <!-- Splash screen -->
+    <string name="splash_subtitle">A SOUL LOST. AN OATH UNBROKEN.</string>
+
     <!-- Login screen -->
     <string name="login_online_label">FATIGA / ONLINE</string>
     <string name="login_screen_index">01</string>
@@ -30,15 +33,12 @@
     <string name="error_invalid_credentials">NO SOUL ANSWERS TO THESE CREDENTIALS.</string>
     <string name="error_unknown">SOMETHING WENT WRONG. TRY AGAIN.</string>
 
-    <!-- Main screen placeholder -->
+    <!-- Main screen -->
     <string name="main_title">FATIGA</string>
     <string name="main_subtitle">THE DESCENT BEGINS AGAIN</string>
-    <string name="main_placeholder_body">MAIN SCREEN UNDER CONSTRUCTION</string>
     <string name="main_logged_in_as">SOUL BOUND:</string>
-
-    <!-- Main screen -->
     <string name="main_profile_label">PROFILE / 001</string>
-    <string name="main_exit">EXIT</string>
+    <string name="main_settings">SETTINGS</string>
     <string name="main_unknown_soul">THE NAMELESS</string>
     <string name="main_soul_line">SOUL LV. %1$02d  /  %2$02d RUNS</string>
     <string name="main_choose_class">CHOOSE YOUR CLASS</string>
@@ -60,11 +60,161 @@
     <string name="run_result_fell">FELL</string>
     <string name="run_result_fled">FLED</string>
 
-    <!-- City screen (temporary stub) -->
+    <!-- Settings screen -->
+    <string name="settings_online_label">FATIGA / SETTINGS</string>
+    <string name="settings_close">CLOSE</string>
+    <string name="settings_title">SETTINGS</string>
+    <string name="settings_subtitle">THE OATH BINDS. THE SOUL REMEMBERS.</string>
+    <string name="settings_section_profile">PROFILE</string>
+    <string name="settings_section_preferences">PREFERENCES</string>
+    <string name="settings_section_account">ACCOUNT</string>
+    <string name="settings_soul_level">SOUL LEVEL</string>
+    <string name="settings_soul_value">LV. %1$d</string>
+    <string name="settings_bound">BOUND</string>
+    <string name="settings_no_date">--</string>
+    <string name="settings_save">SAVE CHANGES</string>
+    <string name="settings_saved">THE OATH IS REWRITTEN.</string>
+    <string name="settings_error_name">NAME MUST BE 3-20 CHARACTERS.</string>
+    <string name="settings_sound">SOUND</string>
+    <string name="settings_vibration">VIBRATION</string>
+    <string name="settings_on">ON</string>
+    <string name="settings_off">OFF</string>
+    <string name="settings_delete">DELETE PROFILE</string>
+    <string name="settings_delete_title">ERASE THIS SOUL?</string>
+    <string name="settings_delete_body">EVERY RUN, EVERY OATH AND EVERY OFFERING WILL BE LOST. THIS CANNOT BE UNDONE.</string>
+    <string name="settings_delete_confirm">ERASE FOREVER</string>
+    <string name="settings_cancel">CANCEL</string>
+    <string name="settings_logout">LOGOUT</string>
+    <string name="settings_footer">SOME DOORS ONLY OPEN FROM WITHIN.</string>
+
+    <!-- City hub -->
     <string name="city_online_label">FATIGA / CITY</string>
     <string name="city_screen_index">03</string>
     <string name="city_title">THE LAST SANCTUARY</string>
     <string name="city_subtitle">A brief shelter from the hollow.</string>
-    <string name="city_placeholder_body">CITY SCREEN UNDER CONSTRUCTION</string>
-    <string name="city_back">RETURN TO PROFILE</string>
+    <string name="city_safe_ground">SAFE GROUND</string>
+    <string name="city_profile">PROFILE</string>
+    <string name="city_gold">GOLD</string>
+    <string name="city_gold_short">GOLD %1$s</string>
+    <string name="city_offerings">OFFERINGS</string>
+    <string name="city_hero_line">%1$s  /  HP %2$d/%3$d  /  ATK %4$d  /  DEF %5$d</string>
+    <string name="city_index_shrine">01</string>
+    <string name="city_index_armory">02</string>
+    <string name="city_index_portal">03</string>
+
+    <string name="city_shrine_title">SHRINE</string>
+    <string name="city_shrine_desc">KNEEL AND OFFER WHAT YOU HAVE TAKEN. THE OLD OATHS STILL ANSWER.</string>
+    <string name="city_shrine_action">PRAY</string>
+
+    <string name="city_armory_title">ARMORY</string>
+    <string name="city_armory_desc">STEEL, LEATHER AND BOTTLED MERCY. EVERYTHING HAS A PRICE.</string>
+    <string name="city_armory_action">TRADE</string>
+    <string name="city_armory_panel_title">WARES</string>
+    <string name="city_armory_weapon">WEAPON</string>
+    <string name="city_armory_armor">ARMOR</string>
+    <string name="city_armory_potion_red">RED POTION</string>
+    <string name="city_armory_potion_blue">BLUE POTION</string>
+    <string name="city_level">LEVEL %1$d</string>
+    <string name="city_owned">OWNED %1$d</string>
+    <string name="city_cost">%1$d G</string>
+    <string name="city_buy">BUY</string>
+
+    <string name="city_portal_title">PORTAL</string>
+    <string name="city_portal_desc">THE SUNKEN KEEP HUNGERS. THREE FLOORS. ONE WAY BACK.</string>
+    <string name="city_portal_action">DESCEND</string>
+
+    <string name="city_msg_no_hero">NO HERO ANSWERS. CHOOSE A CLASS FIRST.</string>
+    <string name="city_msg_not_enough_gold">NOT ENOUGH GOLD.</string>
+    <string name="city_msg_weapon">THE BLADE IS SHARPENED.</string>
+    <string name="city_msg_armor">THE PLATE IS REINFORCED.</string>
+    <string name="city_msg_potion">THE VIAL IS YOURS.</string>
+    <string name="city_msg_inventory_full">YOUR SATCHEL IS FULL.</string>
+
+    <!-- Skill tree (Shrine) -->
+    <string name="skilltree_label">SHRINE / OATHS</string>
+    <string name="skilltree_title">THE OATH TREE</string>
+    <string name="skilltree_subtitle">ONLY YOUR OWN PATH ANSWERS THE PRAYER.</string>
+    <string name="skilltree_offerings">OFFERINGS %1$d</string>
+    <string name="skilltree_inactive">ANOTHER PATH</string>
+    <string name="skilltree_unlocked">UNLOCKED</string>
+    <string name="skilltree_locked">REQUIRES THE PREVIOUS OATH</string>
+    <string name="skilltree_cost">COST %1$d</string>
+    <string name="skilltree_unlock">UNLOCK</string>
+    <string name="skilltree_footer">EVERY OATH IS PAID IN BLOOD AND OFFERINGS.</string>
+    <string name="skilltree_back">RETURN TO SANCTUARY</string>
+    <string name="skilltree_msg_wrong_class">THIS PATH DOES NOT ANSWER YOU.</string>
+    <string name="skilltree_msg_locked">THE PREVIOUS OATH IS NOT YET SWORN.</string>
+    <string name="skilltree_msg_need_offerings">NOT ENOUGH OFFERINGS.</string>
+    <string name="skilltree_msg_unlocked">THE OATH IS SWORN.</string>
+
+    <string name="skill_iron_guard_name">IRON GUARD</string>
+    <string name="skill_iron_guard_desc">DEF +1. THE SHIELD REMEMBERS EVERY BLOW.</string>
+    <string name="skill_crushing_blow_name">CRUSHING BLOW</string>
+    <string name="skill_crushing_blow_desc">ATK +2. BONE BREAKS BEFORE STEEL.</string>
+    <string name="skill_blood_oath_name">BLOOD OATH</string>
+    <string name="skill_blood_oath_desc">MAX HP +8. PAIN BECOMES FUEL.</string>
+    <string name="skill_steady_aim_name">STEADY AIM</string>
+    <string name="skill_steady_aim_desc">ATK +1. BREATH, THEN RELEASE.</string>
+    <string name="skill_twin_shot_name">TWIN SHOT</string>
+    <string name="skill_twin_shot_desc">ATK +2. TWO ARROWS, ONE PRAYER.</string>
+    <string name="skill_shadow_step_name">SHADOW STEP</string>
+    <string name="skill_shadow_step_desc">DEF +1, MAX HP +4. THE DARK MAKES ROOM.</string>
+    <string name="skill_unknown_name">UNKNOWN OATH</string>
+    <string name="skill_unknown_desc">THE INSCRIPTION HAS FADED.</string>
+
+    <!-- Battle screen -->
+    <string name="battle_dungeon">THE SUNKEN KEEP</string>
+    <string name="battle_floor_turn">FLOOR %1$d  /  TURN %2$d</string>
+    <string name="battle_turn">TURN %1$d</string>
+    <string name="battle_pause">II</string>
+    <string name="battle_pause_title">THE WORLD HOLDS ITS BREATH</string>
+    <string name="battle_pause_body">THE GOBLIN WAITS. YOUR OATH DOES NOT.</string>
+    <string name="battle_resume">RESUME</string>
+    <string name="battle_abandon">ABANDON RUN</string>
+    <string name="battle_enemy_goblin">GOBLIN</string>
+    <string name="battle_enemy_goblin_desc">A WRETCHED THING WITH A RUSTED CLEAVER.</string>
+    <string name="battle_attack">ATTACK</string>
+    <string name="battle_special">SPECIAL</string>
+    <string name="battle_flee">FLEE</string>
+    <string name="battle_enemy_turn">ENEMY TURN</string>
+    <string name="battle_your_turn">YOUR TURN</string>
+    <string name="battle_inventory">INVENTORY</string>
+    <string name="battle_inventory_count">%1$d SLOTS</string>
+    <string name="battle_hint">TAP A POTION TO DRINK. THE ENEMY STILL STRIKES.</string>
+    <string name="battle_hp_value">%1$d / %2$d</string>
+    <string name="battle_empty_slot">EMPTY</string>
+    <string name="battle_item_count">x%1$d</string>
+    <string name="battle_item_red">RED POTION</string>
+    <string name="battle_item_blue">BLUE POTION</string>
+    <string name="battle_item_unknown">UNKNOWN VIAL</string>
+
+    <string name="battle_log_start">A GOBLIN BLOCKS THE WAY.</string>
+    <string name="battle_log_hero_attack">YOUR BLADE BITES FOR %1$d.</string>
+    <string name="battle_log_hero_special_warrior">CRUSHING BLOW LANDS %1$d.</string>
+    <string name="battle_log_hero_special_miss">THE BLOW GOES WIDE.</string>
+    <string name="battle_log_hero_archer">ARROWS FIND FLESH FOR %1$d.</string>
+    <string name="battle_log_archer_miss">BOTH ARROWS MISS.</string>
+    <string name="battle_log_full_hp">YOU ARE ALREADY WHOLE.</string>
+    <string name="battle_log_heal">THE POTION RESTORES %1$d HP.</string>
+    <string name="battle_log_flee_success">YOU SLIP INTO THE DARK.</string>
+    <string name="battle_log_flee_fail">THE GOBLIN CUTS OFF YOUR ESCAPE.</string>
+    <string name="battle_log_abandon">YOU ABANDON THE DESCENT.</string>
+    <string name="battle_log_enemy_attack">THE GOBLIN STRIKES FOR %1$d.</string>
+    <string name="battle_log_enemy_dead">THE GOBLIN FALLS.</string>
+    <string name="battle_log_floor_clear">THE STAIRS DESCEND FURTHER.</string>
+    <string name="battle_log_victory">THE KEEP IS SILENT. YOU LIVE.</string>
+    <string name="battle_log_fell">YOUR SOUL FADES INTO THE HOLLOW.</string>
+    <string name="battle_error_no_hero">NO HERO WALKS THESE HALLS.</string>
+
+    <string name="battle_outcome_clear">THE KEEP YIELDS</string>
+    <string name="battle_outcome_clear_body">THREE FLOORS CLEARED. THE GOBLINS WILL REMEMBER YOUR NAME.</string>
+    <string name="battle_outcome_fled">YOU ESCAPED</string>
+    <string name="battle_outcome_fled_body">YOU LIVE, BUT HALF YOUR SPOILS REMAIN IN THE DARK.</string>
+    <string name="battle_outcome_fell">YOU FELL</string>
+    <string name="battle_outcome_fell_body">THE HOLLOW TAKES YOUR BODY. YOUR PROFILE REMAINS, EMPTY.</string>
+    <string name="battle_outcome_floor">FLOOR %1$d OF %2$d</string>
+    <string name="battle_outcome_gold">GOLD +%1$d</string>
+    <string name="battle_outcome_offerings">OFFERINGS +%1$d</string>
+    <string name="battle_return_sanctuary">RETURN TO SANCTUARY</string>
+    <string name="battle_return_profile">RETURN TO PROFILE</string>
 </resources>
